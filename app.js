@@ -36,7 +36,7 @@ var opts = require('optimist')
             demand: true,
             alias: 'p',
             description: 'wetty listen port'
-        },
+        }
     }).boolean('allow_discovery').argv;
 
 var runhttps = false;
@@ -81,7 +81,7 @@ app.get('/wetty/ssh/:user', function(req, res) {
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 if (runhttps) {
-    httpserv = https.createServer(opts.ssl, app).listen(opts.port, function() {
+    httpserv = https.createServer(opts.ssl, app).listen(process.env.PORT || 5000, function() {
         console.log('https on port ' + opts.port);
     });
 } else {
