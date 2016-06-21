@@ -32,6 +32,6 @@
         "wetty": "./bin/wetty.js"
     },
     "scripts":{
-        "start":"node app.js -p 80"
+        "start":"node app.js -p 3000"
     }
 }
