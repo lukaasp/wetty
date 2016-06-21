@@ -1,5 +1,5 @@
 var term;
-var socket = io(location.origin, {path: '/wetty/socket.io'})
+var socket = io(location.origin, {path: '/console/socket.io'});
 var buf = '';
 
 function Wetty(argv) {
@@ -14,7 +14,7 @@ Wetty.prototype.run = function() {
     this.io.onVTKeystroke = this.sendString_.bind(this);
     this.io.sendString = this.sendString_.bind(this);
     this.io.onTerminalResize = this.onTerminalResize.bind(this);
-}
+};
 
 Wetty.prototype.sendString_ = function(str) {
     socket.emit('input', str);

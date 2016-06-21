@@ -30,5 +30,8 @@
     "preferGlobal": "true",
     "bin": {
         "wetty": "./bin/wetty.js"
+    },
+    "scripts":{
+        "start":"node app.js -p 80"
     }
 }
